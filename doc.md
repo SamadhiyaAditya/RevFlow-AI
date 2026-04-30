@@ -151,4 +151,22 @@ RevFlow-Ai utilizes a **dual-trigger system**:
 
 ---
 
+## 8. Deployment & Environment
+
+The application is fully configured for simultaneous local development and cloud production without code changes.
+
+### 8.1 Live Production URLs
+*   **Frontend**: [https://revflowai.vercel.app](https://revflowai.vercel.app)
+*   **Backend**: [https://revflow-ai.onrender.com](https://revflow-ai.onrender.com)
+
+### 8.2 CORS Configuration
+The backend (`main.py`) dynamically accepts requests from:
+*   `http://localhost:5173` (Local Vite)
+*   `https://revflowai.vercel.app` (Production Vercel)
+*   Any dynamic URL injected via the `FRONTEND_URL` environment variable.
+
+This means you can run `npm run dev` locally and it will seamlessly communicate with the deployed Render backend if your local `.env` points to it, or you can run both entirely locally.
+
+---
+
 *End of Documentation*

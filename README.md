@@ -70,9 +70,16 @@ npm run dev
 
 ---
 
-## 📖 Documentation & Deployment
+## 🌐 Live Demo
+- **Frontend (Vercel)**: [https://revflowai.vercel.app](https://revflowai.vercel.app)
+- **Backend API (Render)**: [https://revflow-ai.onrender.com/api/health](https://revflow-ai.onrender.com/api/health)
 
-- **Full Documentation**: [doc.md](doc.md)
+---
+
+## 📖 Documentation & Guides
+
+- **User Guide (Start Here)**: [appGuide.md](appGuide.md)
+- **Technical Documentation**: [doc.md](doc.md)
 
 ---
 
