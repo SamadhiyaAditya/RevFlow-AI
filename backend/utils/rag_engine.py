@@ -7,18 +7,17 @@ import os
 import logging
 from typing import List, Dict, Any, Optional
 
-import torch
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
 from db.supabase_client import supabase
 
 logger = logging.getLogger(__name__)
 
-# Load model once at startup (CPU only for production free tiers)
+# Load lightweight ONNX model (uses ~50MB RAM instead of 600MB PyTorch RAM)
 try:
-    model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
-    logger.info("✅ RAG SentenceTransformer loaded on CPU.")
+    model = TextEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    logger.info("✅ RAG FastEmbed loaded successfully.")
 except Exception as e:
-    logger.error(f"❌ Failed to load SentenceTransformer: {e}")
+    logger.error(f"❌ Failed to load FastEmbed: {e}")
     model = None
 
 
@@ -27,8 +26,9 @@ def generate_embedding(text: str) -> List[float]:
     if not model or not text:
         return [0.0] * 384
     try:
-        embedding = model.encode(text).tolist()
-        return embedding
+        # FastEmbed returns a generator of numpy arrays
+        embeddings = list(model.embed([text]))
+        return embeddings[0].tolist()
     except Exception as e:
         logger.error(f"Embedding error: {e}")
         return [0.0] * 384
