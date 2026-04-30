@@ -18,7 +18,7 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="p-6 border-b border-surface-700/50">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-500/25">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-500/25" title="RevFlow-Ai System">
             <Zap className="w-5 h-5 text-white" />
           </div>
           <div>
@@ -35,6 +35,7 @@ export default function Sidebar() {
             key={path}
             to={path}
             end={path === '/'}
+            title={`Go to ${label}`}
             className={({ isActive }) =>
               `flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 group ${
                 isActive

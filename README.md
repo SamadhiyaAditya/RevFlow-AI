@@ -73,13 +73,6 @@ npm run dev
 ## 📖 Documentation & Deployment
 
 - **Full Documentation**: [doc.md](doc.md)
-- **Deployment Guide**: [Deployment Artifact](artifacts/deployment_guide.md)
-
----
-
-## ⚖️ License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
