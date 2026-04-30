@@ -453,7 +453,7 @@ For each `DISCREPANCY` item, the agent calls Groq. The prompt passes: vendor nam
 - System prompt: sets the agent as a professional finance assistant for the company (signed off as "RevFlow-Ai — Automated Finance Agent")
 - User prompt: passes structured discrepancy details
 - Instructions: firm but polite tone, under 4 sentences, specific numbers included
-- Model: `llama3-8b-8192` (free, fast, high quality for this task)
+- Model: `llama-3.1-8b-instant` (free, fast, high quality for this task)
 
 ---
 

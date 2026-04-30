@@ -22,7 +22,7 @@ The architecture is designed to be highly resilient, entirely free-tier deployab
 *   **Backend REST API**: FastAPI (Python 3.12+)
 *   **Frontend Dashboard**: React + Vite + Tailwind CSS
 *   **Database & Storage**: Supabase (PostgreSQL with `pgvector` extension)
-*   **AI Engine (LLM)**: Groq API using `llama3-8b-8192` (Extremely fast, low-latency open-source inference)
+*   **AI Engine (LLM)**: Groq API using `llama-3.1-8b-instant` (Extremely fast, low-latency open-source inference)
 *   **RAG Embeddings**: `sentence-transformers` (`all-MiniLM-L6-v2`) running locally on the backend.
 *   **PDF Extraction**: `pdfplumber` (Python)
 *   **Fuzzy Matching**: `thefuzz` + `python-Levenshtein`

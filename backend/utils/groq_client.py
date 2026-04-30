@@ -1,7 +1,7 @@
 """
 Groq API wrapper.
 Provides a simple function to call the Groq LLM for email generation.
-Uses llama3-8b-8192 by default (free tier, fast inference).
+Uses llama-3.1-8b-instant by default (free tier, fast inference).
 """
 
 import os
@@ -15,7 +15,7 @@ GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
 client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
 
 
-def generate_text(system_prompt: str, user_prompt: str, model: str = "llama3-8b-8192", max_tokens: int = 512) -> str:
+def generate_text(system_prompt: str, user_prompt: str, model: str = "llama-3.1-8b-instant", max_tokens: int = 512) -> str:
     """
     Call Groq API with a system + user prompt and return the generated text.
     Falls back to a placeholder if the API key is not configured.
